@@ -16,6 +16,20 @@ en base a dicha información.
 - Spring 3.2+
 - Springframework AI 0.8.0-SNAPSHOT
 
+### Docker Build for CI/CD
+```bash
+$ docker build . -t openai-wisdom-chatbot
+$ docker run -d --name openai-wisdom-chatbot -p 8080:8080 openai-wisdom-chatbot
+```
+
+### Running on Azure - AKS
+```bash
+$ az group create --name rg-demo-openai --location eastus
+$ az aks create --resource-group rg-demo-openai --name aks-demo-openai --enable-managed-identity --node-count 1 --generate-ssh-keys
+$ az aks get-credentials --resource-group rg-demo-openai --name aks-demo-openai
+$ 
+```
+
 ### Imagenes de Demo
 Datos a cargar para el chatbot
 ![Data](img/01-pdf.jpg)
